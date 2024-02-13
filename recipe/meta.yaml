@@ -42,5 +42,5 @@ about:
     map with a planar (rectangular) topology. It is used for clustering data and
     performing dimensionality reduction.
   dev_url: https://github.com/rileypsmith/sklearn-som
-  doc_url: https://sklearn-som.readthedocs.io/en/latest/
+  doc_url: https://sklearn-som.readthedocs.io/
 
