@@ -1,0 +1,46 @@
+{% set version = "1.1.0" %}
+{% set name = "sklearn-som" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{name}}-{{ version }}.tar.gz
+  sha256: 9b8107f42dfbd68db0d1aa75dd2007be4e0136bf0af96da51513e295f76646d9
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+    - wheel
+  run:
+    - python
+    - numpy
+
+test:
+  imports:
+    - sklearn_som
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/rileypsmith/sklearn-som
+  license: MIT
+  license_family: MIT
+  license_url: https://github.com/rileypsmith/sklearn-som/blob/main/LICENSE
+  summary: A simple, planar self-organizing map with methods similar to clustering methods in Scikit Learn.
+  description: |
+    sklearn-som is a minimalist, simple implementation of a Kohonen self organizing
+    map with a planar (rectangular) topology. It is used for clustering data and
+    performing dimensionality reduction.
+  dev_url: https://github.com/rileypsmith/sklearn-som
+  doc_url: https://sklearn-som.readthedocs.io/
+
